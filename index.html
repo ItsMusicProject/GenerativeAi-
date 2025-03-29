@@ -1,4 +1,5 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,142 +18,92 @@
             max-width: 1200px;
             margin: auto;
             padding: 20px;
-        }/* Warrior Title */
-    .title {
-        font-size: 3rem;
-        font-weight: bold;
-        text-transform: uppercase;
-        background: linear-gradient(90deg, #ff9500, #ff2d00);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        text-shadow: 2px 2px 10px rgba(255, 69, 0, 0.8);
-        margin-top: 20px;
-    }
-    
-    /* Hero Section */
-    .hero {
-        position: relative;
-        background: url('warrior-bg.jpg') center/cover no-repeat;
-        height: 70vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    .hero-content {
-        background: rgba(0, 0, 0, 0.7);
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 0 20px rgba(255, 69, 0, 0.8);
-    }
-    
-    /* Interactive Button */
-    .btn {
-        padding: 15px 30px;
-        font-size: 1.2rem;
-        font-weight: bold;
-        border: none;
-        cursor: pointer;
-        background: linear-gradient(90deg, #ff2d00, #ff9500);
-        color: white;
-        border-radius: 5px;
-        transition: 0.3s;
-        box-shadow: 0px 5px 15px rgba(255, 69, 0, 0.6);
-    }
-    .btn:hover {
-        transform: scale(1.1);
-        box-shadow: 0px 10px 20px rgba(255, 69, 0, 0.9);
-    }
-    
-    /* Canvas */
-    canvas {
-        border: 2px solid #ff2d00;
-        box-shadow: 0 0 20px rgba(255, 69, 0, 0.8);
-        margin-top: 20px;
-    }
-    
-    /* Feature Section */
-    .features {
-        display: flex;
-        justify-content: space-around;
-        flex-wrap: wrap;
-        padding: 40px 20px;
-        background: #1a1a1a;
-    }
-    .feature-box {
-        width: 30%;
-        padding: 20px;
-        background: rgba(255, 69, 0, 0.2);
-        border: 1px solid #ff9500;
-        border-radius: 10px;
-        box-shadow: 0 0 15px rgba(255, 69, 0, 0.7);
-        transition: 0.3s;
-    }
-    .feature-box:hover {
-        transform: scale(1.05);
-        box-shadow: 0 0 25px rgba(255, 69, 0, 1);
-    }
-    
-    /* Footer */
-    footer {
-        background: #000;
-        padding: 20px;
-        font-size: 1rem;
-        color: #ff9500;
-        border-top: 2px solid #ff2d00;
-    }
-</style>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
-<script>
-    let canvas;
-    function setup() {
-        canvas = createCanvas(windowWidth * 0.8, windowHeight * 0.6);
-        canvas.parent('artCanvas');
-        noLoop();
-        generateArt();
-    }
-    
-    function draw() {}
-    
-    function generateArt() {
-        background(10);
-        for (let i = 0; i < 200; i++) {
-            let x = random(width);
-            let y = random(height);
-            let size = random(5, 50);
-            let alpha = random(100, 255);
-            let colorPick = color(random(200, 255), random(50, 100), random(0, 50), alpha);
-            fill(colorPick);
-            noStroke();
-            ellipse(x, y, size, size);
         }
-        drawWarriorEffect();
-    }
-    
-    function drawWarriorEffect() {
-        stroke(255, 69, 0, 180);
-        strokeWeight(3);
-        for (let i = 0; i < 10; i++) {
-            let x1 = random(width);
-            let y1 = random(height);
-            let x2 = x1 + random(-50, 50);
-            let y2 = y1 + random(-50, 50);
-            line(x1, y1, x2, y2);
+        /* Warrior Title */
+        .title {
+            font-size: 3rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            background: linear-gradient(90deg, #ff9500, #ff2d00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 2px 2px 10px rgba(255, 69, 0, 0.8);
+            margin-top: 20px;
         }
-    }
-    
-    document.addEventListener('DOMContentLoaded', () => {
-        document.getElementById('regenerate').addEventListener('click', () => {
-            clear();
-            generateArt();
-        });
-    });
-    
-    function windowResized() {
-        resizeCanvas(windowWidth * 0.8, windowHeight * 0.6);
-        generateArt();
-    }
-</script>
-
+        /* Hero Section */
+        .hero {
+            position: relative;
+            background: url('warrior-bg.jpg') center/cover no-repeat;
+            height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .hero-content {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(255, 69, 0, 0.8);
+        }
+        /* Interactive Button */
+        .btn {
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            background: linear-gradient(90deg, #ff2d00, #ff9500);
+            color: white;
+            border-radius: 5px;
+            transition: 0.3s;
+            box-shadow: 0px 5px 15px rgba(255, 69, 0, 0.6);
+        }
+        .btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0px 10px 20px rgba(255, 69, 0, 0.9);
+        }
+        /* Canvas */
+        #artCanvas {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+        canvas {
+            border: 2px solid #ff2d00;
+            box-shadow: 0 0 20px rgba(255, 69, 0, 0.8);
+        }
+        /* Feature Section */
+        .features {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            padding: 40px 20px;
+            background: #1a1a1a;
+        }
+        .feature-box {
+            width: 30%;
+            padding: 20px;
+            background: rgba(255, 69, 0, 0.2);
+            border: 1px solid #ff9500;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(255, 69, 0, 0.7);
+            transition: 0.3s;
+        }
+        .feature-box:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 25px rgba(255, 69, 0, 1);
+        }
+        /* Footer */
+        footer {
+            background: #000;
+            padding: 20px;
+            font-size: 1rem;
+            color: #ff9500;
+            border-top: 2px solid #ff2d00;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
 </head>
 <body>
     <div class="container">
@@ -168,5 +119,56 @@
             <p>&copy; 2025 Warrior's Realm - The Art of Battle</p>
         </footer>
     </div>
+
+    <script>
+        let canvas;
+        function setup() {
+            canvas = createCanvas(windowWidth * 0.8, windowHeight * 0.6);
+            canvas.parent(document.getElementById('artCanvas'));
+            noLoop();
+            generateArt();
+        }
+        
+        function draw() {}
+
+        function generateArt() {
+            background(10);
+            for (let i = 0; i < 200; i++) {
+                let x = random(width);
+                let y = random(height);
+                let size = random(5, 50);
+                let alpha = random(100, 255);
+                let colorPick = color(random(200, 255), random(50, 100), random(0, 50), alpha);
+                fill(colorPick);
+                noStroke();
+                ellipse(x, y, size, size);
+            }
+            drawWarriorEffect();
+        }
+
+        function drawWarriorEffect() {
+            stroke(255, 69, 0, 180);
+            strokeWeight(3);
+            for (let i = 0; i < 10; i++) {
+                let x1 = random(width);
+                let y1 = random(height);
+                let x2 = x1 + random(-50, 50);
+                let y2 = y1 + random(-50, 50);
+                line(x1, y1, x2, y2);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('regenerate').addEventListener('click', () => {
+                clear();
+                setup(); // Properly reset and regenerate
+            });
+        });
+
+        function windowResized() {
+            resizeCanvas(windowWidth * 0.8, windowHeight * 0.6);
+            generateArt();
+        }
+    </script>
 </body>
 </html>
